@@ -1,50 +1,54 @@
 # MarkovChain-VEM
 
-Code repository for "Practical Markov chain clustering: Fast, automatic
-determination of the number of clusters" by RJW and CEM.
+Code repository for "Practical Markov chain clustering: Fast, automatic determination of the number of clusters" by RJW and CEM.
 
-Jupyter notebooks in main folder reproduce figures from the paper.
+The core code to run the VEM algorithm can be found in [code/clustering.py](code/clustering.py) with function `doVEM` that does a single instance of VEM. There are also wrappers `doVEMmulti` and `doVEMmultiPar` that run several (parallelized) initiations and outputs the run corresponding to the highest ELBO. 
 
-The main code to run the VEM algorithm can be found in [/code/clustering.py]([/code/clustering.py])
+Any issues or questions can be directed to chris.miles@uci.edu or rwebber@ucsd.edu.
 
-Any issues or questions can be directed to chris.miles@uci.edu. 
+---
 
-### Figure 1
+Jupyter notebooks in main repo folder reproduce figures from the paper. Postprocessing (slight font tweaks, combining panels) was done in Adobe Illustrator. 
 
-Run [example_fig.ipynb](example_fig.ipynb) generates both subpanels of the figure as separate files. 
+### Figure 1: example clustering
 
-### Figure 2
+Run [example.ipynb](example.ipynb) generates both subpanels of the figure as separate files. 
 
-Run [sweep_accuracyNT_fig.ipynb](sweep_accuracyNT_fig.ipynb) generates both subpanels of the figure as separate files. 
+### Figure 2: classification accuracy sweeps against $N$, $T$ 
 
-### Figure 3
+Run [sweep_accuracyNT.ipynb](sweep_accuracyNT.ipynb) generates both subpanels of the figure as separate files. 
 
-Run [EM_localmin_fig.ipynb](EM_localmin_fig.ipynb) generates both subpanels of the figure as separate files. 
+### Figure 3: local minima in VEM 
 
-### Figure 4
+Run [EM_localmin.ipynb](EM_localmin.ipynb) generates both subpanels of the figure as separate files. 
 
-This figure and the next depend on the `Last.fm` dataset. We have included in the data folder `Lastfm-ArtistTags2007` but the data folder also requires `lastfm-dataset-1K` which is considerably larger (~ 1 GB) and not uploaded to Github, but can be found here: http://mtg.upf.edu/static/datasets/last.fm/lastfm-dataset-1K.tar.gz. If this link dies, please email me and I’ll send it to you.
+### Figure 4: Last.fm top 10 user identification
+
+This figure and the next depend on the Last.fm  dataset. We have included in the data folder `Lastfm-ArtistTags2007` but the data folder also requires `lastfm-dataset-1K` which is considerably larger (>2 GB) and not uploaded to Github, but can be found here: http://mtg.upf.edu/static/datasets/last.fm/lastfm-dataset-1K.tar.gz. If this link dies, please email me and I’ll send it to you.
 
 The Last.fm data processing is copied from  https://github.com/hetankevin/mdpmix so the performance comparison is as direct as possible. 
 
-Run [lastfm_top10_fig.ipynb](lastfm_top10_fig.ipynb) after both artist tags and user data have been added to the data folder. This will generate both panels as individual figures.  
+Run [lastfm_top10.ipynb](lastfm_top10.ipynb) after both artist tags and user data have been added to the data folder. This will generate both panels as individual figures.  
 
-### Figure 5
+### Figure 5: Last.fm number of user clusters
 
 See previous figure. Run [lastfm_clusterusers.ipynb](lastfm_clusterusers.ipynb) to generate a single figure with both panels.
 
-### Figure 6
+### Figure 6: Ultrarunner clustering
 
 The Ultrarunner dataset is available from http://maths.ucd.ie/~brendan/data/24H.xlsx, as referenced in the [Roick et al paper](https://doi.org/10.1007/s11634-020-00395-7). We have included it in the `data/` folder.
 
-Run [ultrarunners_fig.ipynb](ultrarunners_fig.ipynb) to generate the full figure.
+Run [ultrarunners.ipynb](ultrarunners.ipynb) to generate the full figure.
 
-### Figure 7
+### Figure 7: MISA gene circuit schematic
 
 The simulations in the Jupyter notebook use the [GillesPy2](https://github.com/StochSS/GillesPy2) and could be optimized further by using the option to compile to `C`. 
 
+The Markov State spectral clustering utilizes some speedups and code from RPCholesky:
+https://github.com/eepperly/Randomly-Pivoted-Cholesky
+
 Run [gene_examples.ipynb](gene_examples.ipynb) to generate the full figure. 
 
-### Figure 8
+### Figure 8: MISA gene circuit clustering accuracy
 
-Run [gene_clustering_acc_fig.ipynb](gene_clustering_acc_fig.ipynb) to generate the full figure. 
+Run [gene_clustering_acc.ipynb](gene_clustering_acc.ipynb) to generate the full figure. 
