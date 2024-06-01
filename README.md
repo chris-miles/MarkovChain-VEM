@@ -12,15 +12,15 @@ Jupyter notebooks in main repo folder reproduce figures from the paper. Postproc
 
 ### Figure 1: example clustering
 
-Run [example.ipynb](example.ipynb) generates both subpanels of the figure as separate files. 
+The notebook [example.ipynb](example.ipynb) generates both subpanels of the figure as separate files. 
 
 ### Figure 2: classification accuracy sweeps against $N$, $T$ 
 
-Run [sweep_accuracyNT.ipynb](sweep_accuracyNT.ipynb) generates both subpanels of the figure as separate files. 
+The notebook [sweep_accuracyNT.ipynb](sweep_accuracyNT.ipynb) generates both subpanels of the figure as separate files. 
 
 ### Figure 3: local minima in VEM 
 
-Run [EM_localmin.ipynb](EM_localmin.ipynb) to generate the figure. 
+The notebook [EM_localmin.ipynb](EM_localmin.ipynb) generates the figure. 
 
 ### Figure 4: Last.fm top 10 user identification
 
