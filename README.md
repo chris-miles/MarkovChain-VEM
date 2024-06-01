@@ -20,7 +20,7 @@ Run [sweep_accuracyNT.ipynb](sweep_accuracyNT.ipynb) generates both subpanels of
 
 ### Figure 3: local minima in VEM 
 
-Run [EM_localmin.ipynb](EM_localmin.ipynb) generates both subpanels of the figure as separate files. 
+Run [EM_localmin.ipynb](EM_localmin.ipynb) to generate the figure. 
 
 ### Figure 4: Last.fm top 10 user identification
 
@@ -28,11 +28,17 @@ This figure and the next depend on the Last.fm  dataset. We have included in the
 
 The Last.fm data processing is copied from  https://github.com/hetankevin/mdpmix so the performance comparison is as direct as possible. 
 
-Run [lastfm_top10.ipynb](lastfm_top10.ipynb) after both artist tags and user data have been added to the data folder. This will generate both panels as individual figures.  
+Run [lastfm_top10_sweep.ipynb](lastfm_top10sweep.ipynb) after both artist tags and user data have been added to the data folder. This will generate the sweep of accuracy against trajectory length $T$. 
+
+The notebook [lastfm_confusion.ipynb](lastfm_confusion.ipynb) generates the confusion matrix for $T=250$ shown in panel b.
+
+We also included [lastfm_top10_sweep_keepgenre.ipynb](lastfm_top10_sweep_keepgenre.ipynb), a version of the similarly named notebook where we do not discard same-genre transitions. However, no impact on accuracy is seen.
 
 ### Figure 5: Last.fm number of user clusters
 
 See previous figure. Run [lastfm_clusterusers.ipynb](lastfm_clusterusers.ipynb) to generate a single figure with both panels.
+
+We include in this repo but not the paper a test where we do not discard same-genre transitions, shown in [lastfm_clusterusers_keepgenre.ipynb](lastfm_clusterusers_keepgenre.ipynb). 
 
 ### Figure 6: Ultrarunner clustering
 
